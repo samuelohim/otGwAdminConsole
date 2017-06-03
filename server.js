@@ -2,10 +2,9 @@ const eo = require('express');
 app = eo();
 port = process.env.port || 8080;
 
-app.get('/', (req,res)=>{
+router = require('./app/route');
 
-	res.send('Hi from server');
-});
+app.use(router);
 
 app.listen(port, ()=>{
 	console.log(`Listening on port: ${port}`);
